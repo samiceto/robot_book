@@ -1,0 +1,104 @@
+name: ROS 2 Code Repository CI
+
+# Template for companion code repositories
+# Copy this file to each code repository as .github/workflows/ci.yml
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Weekly CI validation (every Monday at 9 AM UTC)
+    - cron: '0 9 * * 1'
+
+jobs:
+  test-ubuntu-2204-ros2-iron:
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up ROS 2 Iron
+      run: |
+        sudo apt update
+        sudo apt install -y software-properties-common
+        sudo add-apt-repository universe
+        sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+        sudo apt update
+        sudo apt install -y ros-iron-desktop python3-colcon-common-extensions
+
+    - name: Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install black flake8 pytest
+
+    - name: Lint with flake8
+      run: |
+        # Stop build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=18 --max-line-length=88 --statistics
+
+    - name: Check code formatting with Black
+      run: |
+        black --check .
+
+    - name: Source ROS 2 and build workspace
+      run: |
+        source /opt/ros/iron/setup.bash
+        colcon build --symlink-install
+
+    - name: Run tests
+      run: |
+        source /opt/ros/iron/setup.bash
+        source install/setup.bash
+        colcon test
+        colcon test-result --verbose
+
+  test-ubuntu-2404-ros2-jazzy:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up ROS 2 Jazzy
+      run: |
+        sudo apt update
+        sudo apt install -y software-properties-common
+        sudo add-apt-repository universe
+        sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+        echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+        sudo apt update
+        sudo apt install -y ros-jazzy-desktop python3-colcon-common-extensions
+
+    - name: Install Python dependencies
+      run: |
+        python3 -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip install black flake8 pytest
+
+    - name: Lint with flake8
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=18 --max-line-length=88 --statistics
+
+    - name: Check code formatting with Black
+      run: |
+        black --check .
+
+    - name: Source ROS 2 and build workspace
+      run: |
+        source /opt/ros/jazzy/setup.bash
+        colcon build --symlink-install
+
+    - name: Run tests
+      run: |
+        source /opt/ros/jazzy/setup.bash
+        source install/setup.bash
+        colcon test
+        colcon test-result --verbose

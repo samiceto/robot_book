@@ -1,0 +1,170 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+.venv/
+venv/
+ENV/
+env/
+
+# LaTeX & PDF Build Artifacts
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
+*.dvi
+*.xdv
+*-converted-to.*
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+*.alg
+*.loa
+acs-*.bib
+*.thm
+*.nav
+*.pre
+*.snm
+*.vrb
+*.spl
+*.idx
+*.ilg
+*.ind
+
+# Node.js / JavaScript (for Docusaurus)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.eslintcache
+.node_repl_history
+*.tgz
+.yarn-integrity
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docusaurus
+.docusaurus/
+.cache/
+build/
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.secret
+*.key
+*.pem
+*.crt
+credentials.json
+secrets/
+
+# ROS 2 Specific
+install/
+log/
+build/
+devel/
+*.bag
+*.db3
+
+# NVIDIA Isaac Sim
+*.usd
+*.usda
+*.usdc
+isaac-sim-*/
+omni.logs/
+
+# Testing & Coverage
+.coverage
+.pytest_cache/
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Temporary Files
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# Build Outputs
+*.pdf
+!docs/**/*.pdf
+*.epub
+*.mobi
+
+# Lock Files (keep these in version control for reproducibility)
+# package-lock.json
+# yarn.lock
+# poetry.lock
