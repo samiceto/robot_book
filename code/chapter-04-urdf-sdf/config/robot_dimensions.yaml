@@ -1,0 +1,29 @@
+# Robot Dimensions Configuration
+# All units in SI (meters, kg, radians)
+
+torso:
+  width: 0.3
+  depth: 0.2
+  height: 0.4
+  mass: 15.0
+
+leg:
+  hip_length: 0.3
+  knee_length: 0.3
+  foot_length: 0.15
+  foot_width: 0.08
+  hip_mass: 3.0
+  knee_mass: 2.0
+  foot_mass: 1.0
+  radius: 0.04
+
+arm:
+  shoulder_length: 0.24
+  elbow_length: 0.2
+  shoulder_mass: 1.5
+  elbow_mass: 1.0
+  radius: 0.03
+
+head:
+  radius: 0.12
+  mass: 2.0
