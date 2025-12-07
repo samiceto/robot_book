@@ -2,8 +2,8 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const {themes} = require('prism-react-renderer');
-const math = require('remark-math');
-const katex = require('rehype-katex');
+const remarkMath = require('remark-math');
+const rehypeKatex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -36,8 +36,6 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
         },
         blog: false,
         theme: {
