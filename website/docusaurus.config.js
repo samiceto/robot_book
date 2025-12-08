@@ -58,8 +58,8 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      image: 'img/social-card.jpg',
+      // Social card image (optional)
+      // image: 'img/social-card.jpg',
       navbar: {
         title: 'Physical AI & Humanoid Robotics',
         logo: {
@@ -72,16 +72,6 @@ const config = {
             sidebarId: 'bookSidebar',
             position: 'left',
             label: 'Book',
-          },
-          {
-            to: '/resources',
-            label: 'Resources',
-            position: 'left'
-          },
-          {
-            to: '/errata',
-            label: 'Errata',
-            position: 'left'
           },
           {
             href: 'https://github.com/samiceto/robot_book',
@@ -97,25 +87,12 @@ const config = {
             title: 'Book',
             items: [
               {
-                label: 'Part 1: Foundations',
-                to: '/docs/part1-foundations/introduction',
+                label: 'Introduction',
+                to: '/docs/intro',
               },
               {
                 label: 'Part 2: Simulation',
                 to: '/docs/part2-simulation/gazebo-basics',
-              },
-            ],
-          },
-          {
-            title: 'Resources',
-            items: [
-              {
-                label: 'Code Repositories',
-                to: '/resources',
-              },
-              {
-                label: 'Hardware Guide',
-                to: '/docs/appendices/hardware-buyers-guide',
               },
             ],
           },
@@ -127,8 +104,8 @@ const config = {
                 href: 'https://github.com/samiceto/robot_book',
               },
               {
-                label: 'Errata',
-                to: '/errata',
+                label: 'Code Examples',
+                href: 'https://github.com/samiceto/robot_book/tree/master/code',
               },
             ],
           },
@@ -138,7 +115,7 @@ const config = {
       prism: {
         theme: themes.github,
         darkTheme: themes.dracula,
-        additionalLanguages: ['python', 'cpp', 'bash', 'yaml', 'xml'],
+        additionalLanguages: ['python', 'cpp', 'bash', 'yaml'],
       },
       // Algolia search - uncomment when ready to set up
       // algolia: {

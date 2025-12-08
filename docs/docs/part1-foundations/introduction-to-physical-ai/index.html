@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-part1-foundations/introduction-to-physical-ai" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Chapter 1: Introduction to Physical AI and Humanoid Robotics | Physical AI &amp; Humanoid Robotics</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://samiceto.github.io/robot_book/docs/part1-foundations/introduction-to-physical-ai"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Chapter 1: Introduction to Physical AI and Humanoid Robotics | Physical AI &amp; Humanoid Robotics"><meta data-rh="true" name="description" content="Learning Objectives"><meta data-rh="true" property="og:description" content="Learning Objectives"><link data-rh="true" rel="icon" href="/robot_book/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://samiceto.github.io/robot_book/docs/part1-foundations/introduction-to-physical-ai"><link data-rh="true" rel="alternate" href="https://samiceto.github.io/robot_book/docs/part1-foundations/introduction-to-physical-ai" hreflang="en"><link data-rh="true" rel="alternate" href="https://samiceto.github.io/robot_book/docs/part1-foundations/introduction-to-physical-ai" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Chapter 1: Introduction to Physical AI and Humanoid Robotics","item":"https://samiceto.github.io/robot_book/docs/part1-foundations/introduction-to-physical-ai"}]}</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/robot_book/assets/css/styles.18ba211b.css">
+<script src="/robot_book/assets/js/runtime~main.8762095d.js" defer="defer"></script>
+<script src="/robot_book/assets/js/main.81e0efe7.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_gu5v" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/robot_book/"><div class="navbar__logo"><img src="/robot_book/img/logo.svg" alt="Book Logo" class="themedComponent_ZRzL themedComponent--light_dGsa"><img src="/robot_book/img/logo.svg" alt="Book Logo" class="themedComponent_ZRzL themedComponent--dark_pzCA"></div><b class="navbar__title text--truncate">Physical AI &amp; Humanoid Robotics</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/robot_book/docs/intro">Book</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/samiceto/robot_book" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_T11m"><use href="#theme-svg-external-link"></use></svg></a><div class="toggle_kWbt colorModeToggle_GwZs"><button class="clean-btn toggleButton_fOL9 toggleButtonDisabled_STpu" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_YpC3 lightToggleIcon_DCeJ"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_YpC3 darkToggleIcon_DFgp"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_YpC3 systemToggleIcon_F0ff"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_IP3a"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_IbdI"><div class="docsWrapper_JGIH"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_SdI4" type="button"></button><div class="docRoot_eRbX"><aside class="theme-doc-sidebar-container docSidebarContainer_Ta75"><div class="sidebarViewport_fgog"><div class="sidebar_oDHW"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_vPEQ"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/robot_book/docs/intro"><span title="Physical AI &amp; Humanoid Robotics" class="linkLabel_xOUG">Physical AI &amp; Humanoid Robotics</span></a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="categoryLink_ZNLG menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role="button" aria-expanded="true" href="/robot_book/docs/part1-foundations/introduction-to-physical-ai"><span title="Part 1: Foundations &amp; ROS 2" class="categoryLinkLabel_r8Sl">Part 1: Foundations &amp; ROS 2</span></a></div><ul class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/robot_book/docs/part1-foundations/introduction-to-physical-ai"><span title="Chapter 1: Introduction to Physical AI and Humanoid Robotics" class="linkLabel_xOUG">Chapter 1: Introduction to Physical AI and Humanoid Robotics</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/robot_book/docs/part1-foundations/development-environment-setup"><span title="Chapter 2: Development Environment Setup - ROS 2, Isaac Sim, and Hardware" class="linkLabel_xOUG">Chapter 2: Development Environment Setup - ROS 2, Isaac Sim, and Hardware</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/robot_book/docs/part1-foundations/ros2-fundamentals"><span title="Chapter 3: ROS 2 Fundamentals - Nodes, Topics, Services, Actions" class="linkLabel_xOUG">Chapter 3: ROS 2 Fundamentals - Nodes, Topics, Services, Actions</span></a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/robot_book/docs/part1-foundations/robot-description-urdf-sdf"><span title="Chapter 4: Robot Description - URDF, SDF, and Xacro for Humanoids" class="linkLabel_xOUG">Chapter 4: Robot Description - URDF, SDF, and Xacro for Humanoids</span></a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ZNLG menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/robot_book/docs/part2-simulation/gazebo-basics"><span title="Part 2: Digital Twins &amp; Simulation" class="categoryLinkLabel_r8Sl">Part 2: Digital Twins &amp; Simulation</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ZNLG menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/robot_book/docs/part3-perception/realsense-integration"><span title="Part 3: Perception &amp; Edge AI" class="categoryLinkLabel_r8Sl">Part 3: Perception &amp; Edge AI</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ZNLG menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/robot_book/docs/part4-vla/vla-architecture"><span title="Part 4: Vision-Language-Action Models" class="categoryLinkLabel_r8Sl">Part 4: Vision-Language-Action Models</span></a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="categoryLink_ZNLG menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/robot_book/docs/part5-advanced/bipedal-locomotion"><span title="Part 5: Advanced Topics" class="categoryLinkLabel_r8Sl">Part 5: Advanced Topics</span></a></div></li></ul></nav></div></div></aside><main class="docMainContainer_lg0V"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_nDJs"><div class="docItemContainer_OGiL"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_k3Z9" aria-label="Breadcrumbs"><ul class="breadcrumbs"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/robot_book/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_JACu"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li class="breadcrumbs__item"><span class="breadcrumbs__link">Part 1: Foundations &amp; ROS 2</span></li><li class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link">Chapter 1: Introduction to Physical AI and Humanoid Robotics</span></li></ul></nav><div class="tocCollapsible_QCOD theme-doc-toc-mobile tocMobile_N0YI"><button type="button" class="clean-btn tocCollapsibleButton_pHwF">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Chapter 1: Introduction to Physical AI and Humanoid Robotics</h1></header>
+<p><strong>Learning Objectives</strong></p>
+<p>By the end of this chapter, you will be able to:</p>
+<ol>
+<li class="">Define Physical AI and explain how it differs from traditional AI and large language models</li>
+<li class="">Identify the key components of the Physical AI stack (perception, cognition, action)</li>
+<li class="">Compare and contrast current commercial and research humanoid platforms</li>
+<li class="">Analyze the fundamental technical challenges in humanoid robotics: bipedal locomotion, manipulation, real-time decision-making, and sim-to-real transfer</li>
+<li class="">Navigate the structure of this textbook and select the appropriate learning track for your goals</li>
+<li class="">Assess your hardware and software prerequisites for completing the hands-on labs</li>
+</ol>
+<p><strong>Prerequisites</strong>: None - this is an introductory chapter. However, familiarity with Python programming, basic linear algebra, and machine learning concepts will help you contextualize the material.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="1-what-is-physical-ai">1. What is Physical AI?<a href="#1-what-is-physical-ai" class="hash-link" aria-label="Direct link to 1. What is Physical AI?" title="Direct link to 1. What is Physical AI?" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="11-from-language-models-to-embodied-intelligence">1.1 From Language Models to Embodied Intelligence<a href="#11-from-language-models-to-embodied-intelligence" class="hash-link" aria-label="Direct link to 1.1 From Language Models to Embodied Intelligence" title="Direct link to 1.1 From Language Models to Embodied Intelligence" translate="no">​</a></h3>
+<p>The 2020s have witnessed an unprecedented revolution in artificial intelligence, driven primarily by large language models (LLMs) like GPT-4, Claude, and Gemini. These systems demonstrate remarkable capabilities in natural language understanding, code generation, and reasoning tasks. Yet for all their linguistic prowess, they share a fundamental limitation: they exist purely in the digital realm, divorced from the physical world they describe.</p>
+<p><strong>Physical AI</strong> represents the next frontier—AI systems that interact with and manipulate the physical world through robotic embodiment. Unlike language models that process text tokens, Physical AI systems must:</p>
+<ul>
+<li class=""><strong>Perceive</strong> the 3D world through cameras, depth sensors, IMUs, and tactile feedback</li>
+<li class=""><strong>Reason</strong> about physics, geometry, contact dynamics, and affordances</li>
+<li class=""><strong>Act</strong> through motors, actuators, and end-effectors to achieve goals in unstructured environments</li>
+</ul>
+<p>The distinction is profound. Consider the difference between GPT-4 describing how to pour water from a pitcher into a glass versus a humanoid robot actually performing that task. The language model operates on symbolic representations—words like &quot;pitcher,&quot; &quot;pour,&quot; &quot;glass&quot;—while the robot must solve a cascade of continuous control problems: visual servoing to locate the pitcher, grasp force modulation to avoid crushing the handle, trajectory planning to avoid spilling, and real-time feedback control to compensate for liquid sloshing.</p>
+<p>This gap between symbolic reasoning and physical interaction is what Physical AI aims to bridge. As NVIDIA CEO Jensen Huang stated in his 2024 keynote: &quot;The next wave of AI will be physical AI—AI that understands the laws of physics, predicts physical interactions, and operates in the real world&quot; (Huang, 2024).</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="12-the-physical-ai-stack-perception--cognition--action">1.2 The Physical AI Stack: Perception → Cognition → Action<a href="#12-the-physical-ai-stack-perception--cognition--action" class="hash-link" aria-label="Direct link to 1.2 The Physical AI Stack: Perception → Cognition → Action" title="Direct link to 1.2 The Physical AI Stack: Perception → Cognition → Action" translate="no">​</a></h3>
+<p>Physical AI systems are typically organized into a three-layer stack, analogous to the classic sense-think-act paradigm in robotics but enhanced with modern deep learning:</p>
+<p><strong>Layer 1: Perception</strong></p>
+<ul>
+<li class=""><strong>Vision</strong>: RGB cameras, depth sensors (Intel RealSense D435i, stereo cameras)</li>
+<li class=""><strong>Proprioception</strong>: Joint encoders, IMUs (inertial measurement units), force-torque sensors</li>
+<li class=""><strong>Processing</strong>: Object detection (YOLO, Mask R-CNN), 3D point cloud processing (PointNet++), semantic segmentation</li>
+<li class=""><strong>Output</strong>: Structured representations of the environment (object poses, surface normals, obstacle maps)</li>
+</ul>
+<p><strong>Layer 2: Cognition (The &quot;Brain&quot;)</strong></p>
+<ul>
+<li class=""><strong>Traditional Approach</strong>: Modular pipelines (SLAM + planning + control)</li>
+<li class=""><strong>Modern Approach</strong>: End-to-end Vision-Language-Action (VLA) models that map visual observations directly to robot actions</li>
+<li class=""><strong>Key Models</strong>: OpenVLA (Hugging Face), RT-2 (Google DeepMind), Octo (Berkeley/Stanford)</li>
+<li class=""><strong>Capabilities</strong>: Task understanding from natural language, common-sense reasoning, generalization to novel objects</li>
+</ul>
+<p><strong>Layer 3: Action</strong></p>
+<ul>
+<li class=""><strong>Motion Planning</strong>: RRT*, MoveIt 2 (for manipulation), trajectory optimization</li>
+<li class=""><strong>Low-Level Control</strong>: PID controllers, Model Predictive Control (MPC), whole-body controllers</li>
+<li class=""><strong>Execution</strong>: Joint position/velocity/torque commands sent to motor drivers at 100-1000 Hz</li>
+</ul>
+<p>The critical insight of modern Physical AI is that these layers are increasingly <strong>learned end-to-end</strong> rather than hand-engineered. A VLA model like OpenVLA takes RGB images and language instructions as input and directly outputs joint velocities—implicitly learning perception, reasoning, and control in a single neural network trained on millions of robot trajectories.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="13-humanoids-as-the-ultimate-embodied-ai-challenge">1.3 Humanoids as the Ultimate Embodied AI Challenge<a href="#13-humanoids-as-the-ultimate-embodied-ai-challenge" class="hash-link" aria-label="Direct link to 1.3 Humanoids as the Ultimate Embodied AI Challenge" title="Direct link to 1.3 Humanoids as the Ultimate Embodied AI Challenge" translate="no">​</a></h3>
+<p>Why focus specifically on humanoid robots? The answer lies in the <strong>embodiment hypothesis</strong>: the idea that intelligence emerges from the interaction between brain, body, and environment (Pfeifer &amp; Bongard, 2006). Humanoids represent the ultimate test case for embodied AI because they must solve all the challenges of physical intelligence simultaneously:</p>
+<p><strong>Bipedal Locomotion</strong>: Walking on two legs is a fundamentally unstable task requiring constant feedback control. Humans unconsciously make hundreds of micro-adjustments per second to maintain balance. Humanoid robots must replicate this using Model Predictive Control, Zero Moment Point (ZMP) planning, or learning-based whole-body controllers.</p>
+<p><strong>Dexterous Manipulation</strong>: Human-like hands with 15-20 degrees of freedom enable fine manipulation (threading a needle, folding laundry) that wheeled robots cannot achieve. The challenge is both mechanical (compliant actuators, tactile sensing) and algorithmic (contact-rich planning, learning from demonstrations).</p>
+<p><strong>Shared Human Environments</strong>: Unlike warehouse robots navigating structured spaces, humanoids must operate in homes, offices, and hospitals designed for humans—climbing stairs, opening doors, using tools. This requires generalizable perception and planning, not brittle hand-coded heuristics.</p>
+<p><strong>Natural Human-Robot Interaction</strong>: Humanoid morphology enables intuitive communication through gestures, gaze, and speech. This is critical for applications like eldercare, where users may lack technical expertise.</p>
+<p>The convergence of three technologies has made humanoid Physical AI tractable in the 2020s:</p>
+<ol>
+<li class=""><strong>GPU-Accelerated Simulation</strong> (NVIDIA Isaac Sim, MuJoCo): Train policies on millions of simulated experiences in parallel</li>
+<li class=""><strong>Vision-Language-Action Models</strong>: Leverage internet-scale pre-training (e.g., CLIP for vision, GPT for language) for zero-shot generalization</li>
+<li class=""><strong>Affordable Edge AI Hardware</strong> (NVIDIA Jetson Orin): Run inference at 10-30 Hz on 15W power budgets</li>
+</ol>
+<p>As Figure 1-1 illustrates, these technologies form a virtuous cycle: simulation generates training data → VLA models learn policies → edge deployment enables real-world data collection → improved simulation models close the loop.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="2-the-humanoid-robotics-landscape-2024-2026">2. The Humanoid Robotics Landscape (2024-2026)<a href="#2-the-humanoid-robotics-landscape-2024-2026" class="hash-link" aria-label="Direct link to 2. The Humanoid Robotics Landscape (2024-2026)" title="Direct link to 2. The Humanoid Robotics Landscape (2024-2026)" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="21-commercial-humanoids-figure-02-unitree-g1-tesla-optimus">2.1 Commercial Humanoids: Figure 02, Unitree G1, Tesla Optimus<a href="#21-commercial-humanoids-figure-02-unitree-g1-tesla-optimus" class="hash-link" aria-label="Direct link to 2.1 Commercial Humanoids: Figure 02, Unitree G1, Tesla Optimus" title="Direct link to 2.1 Commercial Humanoids: Figure 02, Unitree G1, Tesla Optimus" translate="no">​</a></h3>
+<p>The commercial humanoid market has exploded since 2023, driven by venture capital investment (&gt;$3 billion in 2023-2024) and breakthroughs in electric actuator technology. Three platforms dominate the landscape:</p>
+<p><strong>Figure 02 (Figure AI, USA)</strong></p>
+<ul>
+<li class=""><strong>Specifications</strong>: 60 kg, 167 cm tall, 16 DOF legs + 6 DOF arms, electric actuators</li>
+<li class=""><strong>Capabilities</strong>: Autonomous warehouse tasks (box picking, pallet stacking), learned via VLA models trained on 10,000+ human demonstrations</li>
+<li class=""><strong>Key Innovation</strong>: End-to-end vision-to-action with GPT-4V for task understanding. In a 2024 demo, Figure 02 successfully interpreted the command &quot;hand me the apple, not the banana&quot; by reasoning about object attributes in real-time (Figure AI, 2024).</li>
+<li class=""><strong>Deployment</strong>: Pilot programs with BMW (automotive assembly) and Amazon (fulfillment centers)</li>
+<li class=""><strong>Cost</strong>: Not publicly disclosed; estimated $150,000-$250,000 per unit</li>
+</ul>
+<p><strong>Unitree G1 (Unitree Robotics, China)</strong></p>
+<ul>
+<li class=""><strong>Specifications</strong>: 47 kg, 127-170 cm tall (adjustable), 23 DOF (12 legs, 6 arms, 3 torso, 2 head), torque-controlled joints</li>
+<li class=""><strong>Capabilities</strong>: Dynamic walking (1.5 m/s), jogging, jumping (30 cm vertical leap), rough terrain navigation</li>
+<li class=""><strong>Key Innovation</strong>: Ultra-low-cost electric actuators ($200/unit vs. $2,000+ for Boston Dynamics-style hydraulic actuators). This cost reduction enables mass production.</li>
+<li class=""><strong>Open Ecosystem</strong>: URDF models, ROS 2 drivers, and Isaac Sim scenes publicly available on GitHub (github.com/unitreerobotics/unitree_ros2)</li>
+<li class=""><strong>Cost</strong>: ~$16,000 (consumer model, 2024 pricing)—10× cheaper than previous-generation humanoids</li>
+</ul>
+<p><strong>Tesla Optimus Gen 2 (Tesla, USA)</strong></p>
+<ul>
+<li class=""><strong>Specifications</strong>: 73 kg, 173 cm tall, 28 DOF, custom electric actuators with 6-axis force-torque sensing in hands</li>
+<li class=""><strong>Capabilities</strong>: Demonstrated in 2024 videos folding laundry, sorting objects, and performing delicate egg-handling tasks</li>
+<li class=""><strong>Key Innovation</strong>: Vertical integration with Tesla&#x27;s Full Self-Driving (FSD) stack. Optimus uses adapted versions of Tesla&#x27;s vision transformers trained on billions of km of driving data (Musk, 2024).</li>
+<li class=""><strong>Deployment</strong>: Internal use in Tesla factories for repetitive tasks; consumer model projected for 2026-2027</li>
+<li class=""><strong>Cost</strong>: Projected &lt;$20,000 at scale (Musk estimates $10,000-$15,000 by 2030)</li>
+</ul>
+<p><strong>Market Outlook</strong>: Goldman Sachs estimates the humanoid robot market will reach $38 billion by 2035, with manufacturing and logistics as primary adopters (Goldman Sachs, 2024). The key enabler is cost reduction—Optimus and G1 target price points comparable to mid-range cars, making them economically viable for tasks currently performed by $50,000-$100,000/year human labor.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="22-research-platforms-open-source-humanoids-poppy-thor-h1">2.2 Research Platforms: Open-Source Humanoids (Poppy, THOR, H1)<a href="#22-research-platforms-open-source-humanoids-poppy-thor-h1" class="hash-link" aria-label="Direct link to 2.2 Research Platforms: Open-Source Humanoids (Poppy, THOR, H1)" title="Direct link to 2.2 Research Platforms: Open-Source Humanoids (Poppy, THOR, H1)" translate="no">​</a></h3>
+<p>While commercial platforms prioritize reliability and cost, research humanoids emphasize modularity, hackability, and open-source ecosystems:</p>
+<p><strong>Poppy Humanoid (Poppy Project, France)</strong></p>
+<ul>
+<li class=""><strong>Specifications</strong>: 25 kg, 83 cm tall, 25 DOF, 3D-printed parts, Dynamixel servos</li>
+<li class=""><strong>Use Case</strong>: Educational robotics, human-robot interaction research</li>
+<li class=""><strong>Key Advantage</strong>: Fully open-source (hardware CAD files, software stack). Total build cost: ~$8,000</li>
+<li class=""><strong>Limitations</strong>: Low torque (cannot walk reliably), primarily used for upper-body manipulation and HRI studies</li>
+</ul>
+<p><strong>THOR (UCLA/KIMLAB, USA)</strong></p>
+<ul>
+<li class=""><strong>Specifications</strong>: 75 kg, 147 cm tall, 32 DOF, electric actuators with series elastic actuators (SEAs) for compliance</li>
+<li class=""><strong>Use Case</strong>: Full-body motion imitation learning (learning to walk/run from human motion capture)</li>
+<li class=""><strong>Key Advantage</strong>: Robust hardware design (survived 1,000+ falls during RL training). Open-source ROS 2 stack</li>
+<li class=""><strong>Research Focus</strong>: Sim-to-real transfer for dynamic locomotion (running at 1.5 m/s, backflips)</li>
+</ul>
+<p><strong>Unitree H1 (Research Variant)</strong></p>
+<ul>
+<li class=""><strong>Specifications</strong>: Similar to G1 but with additional force-torque sensors and higher-torque actuators</li>
+<li class=""><strong>Use Case</strong>: Academic research in learning-based control (UC Berkeley, CMU, ETH Zurich)</li>
+<li class=""><strong>Key Advantage</strong>: Commercial-grade reliability with research-friendly APIs (ROS 2, Isaac Sim support)</li>
+</ul>
+<p><strong>Why Open-Source Matters</strong>: Research progress in Physical AI requires open platforms for reproducibility. The success of ImageNet and COCO in computer vision came from shared benchmarks and datasets. Similarly, open-source humanoids like Unitree G1/H1 enable researchers worldwide to validate algorithms on identical hardware, accelerating progress.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="23-industry-applications-warehousing-healthcare-manufacturing">2.3 Industry Applications: Warehousing, Healthcare, Manufacturing<a href="#23-industry-applications-warehousing-healthcare-manufacturing" class="hash-link" aria-label="Direct link to 2.3 Industry Applications: Warehousing, Healthcare, Manufacturing" title="Direct link to 2.3 Industry Applications: Warehousing, Healthcare, Manufacturing" translate="no">​</a></h3>
+<p>Humanoid robots are transitioning from research labs to real-world deployments in three key sectors:</p>
+<p><strong>Warehousing and Logistics</strong></p>
+<ul>
+<li class=""><strong>Task</strong>: Box picking, pallet loading, inventory scanning</li>
+<li class=""><strong>Challenge</strong>: Unstructured environments (randomized bin picking), high throughput requirements (&gt;800 picks/hour)</li>
+<li class=""><strong>Deployed Systems</strong>: Digit (Agility Robotics) at Amazon warehouses; Figure 02 pilot programs</li>
+<li class=""><strong>Economic Driver</strong>: Labor shortages (U.S. warehouse sector had 490,000 unfilled positions in 2023) and rising wages ($18-$22/hour for warehouse workers)</li>
+</ul>
+<p><strong>Healthcare and Eldercare</strong></p>
+<ul>
+<li class=""><strong>Task</strong>: Patient lifting (hospital to wheelchair transfer), medication delivery, companionship</li>
+<li class=""><strong>Challenge</strong>: Safety-critical (must never drop patients), requires social intelligence (understanding non-verbal cues)</li>
+<li class=""><strong>Pilot Programs</strong>: Toyota&#x27;s T-HR3 teleoperation robot for eldercare in Japan; RIKEN&#x27;s ROBEAR for patient lifting</li>
+<li class=""><strong>Market Driver</strong>: Aging populations (Japan: 29% over 65 by 2025; projected caregiver shortage of 2 million by 2030)</li>
+</ul>
+<p><strong>Manufacturing and Assembly</strong></p>
+<ul>
+<li class=""><strong>Task</strong>: Assembly line tasks (installing car seats, wiring harnesses), quality inspection</li>
+<li class=""><strong>Challenge</strong>: Precision requirements (sub-millimeter tolerances), integration with existing MES (Manufacturing Execution Systems)</li>
+<li class=""><strong>Deployed Systems</strong>: Figure 02 at BMW; FANUC CRX collaborative robots</li>
+<li class=""><strong>Economic Driver</strong>: Reshoring manufacturing to high-wage countries (U.S., Germany) requires automation to offset labor costs</li>
+</ul>
+<p><strong>Safety and Regulation</strong>: The ISO/TS 15066 standard governs collaborative robots (cobots) that work alongside humans, specifying maximum force limits (150 N transient contact) and speed limits in shared workspaces. Humanoids must comply with these standards while demonstrating failure modes (e.g., graceful degradation if a sensor fails).</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="3-technical-challenges">3. Technical Challenges<a href="#3-technical-challenges" class="hash-link" aria-label="Direct link to 3. Technical Challenges" title="Direct link to 3. Technical Challenges" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="31-bipedal-locomotion-and-balance">3.1 Bipedal Locomotion and Balance<a href="#31-bipedal-locomotion-and-balance" class="hash-link" aria-label="Direct link to 3.1 Bipedal Locomotion and Balance" title="Direct link to 3.1 Bipedal Locomotion and Balance" translate="no">​</a></h3>
+<p>Walking on two legs is a canonical example of the <strong>Moravec Paradox</strong>: tasks that are easy for humans (walking, balancing) are extraordinarily difficult for robots, while tasks hard for humans (chess, calculus) are trivial for computers. The core difficulty lies in the <strong>underactuated</strong> nature of bipedal systems—a humanoid has only two contact points with the ground, creating a narrow stability margin.</p>
+<p><strong>Key Concepts</strong>:</p>
+<p><strong>Zero Moment Point (ZMP)</strong>: The point on the ground where the sum of all moments (torques) equals zero. For stable walking, the ZMP must remain inside the support polygon (the convex hull of foot contact points). This constraint is used in classical walking controllers (Honda ASIMO, early Boston Dynamics Atlas).</p>
+<p><strong>Model Predictive Control (MPC)</strong>: A control strategy that solves an optimization problem at each timestep to predict future robot states and select actions that minimize a cost function (e.g., minimize energy while keeping ZMP inside support polygon). MPC is used in modern humanoids like Cassie (Agility Robotics) for dynamic walking.</p>
+<p><strong>Learning-Based Approaches</strong>: Recent work from Berkeley, CMU, and DeepMind trains walking controllers end-to-end using reinforcement learning (RL) in simulation. The key insight: simulate millions of hours of walking with random disturbances (uneven terrain, pushes), then transfer the robust policy to hardware. Unitree H1 achieved 1.5 m/s running using this approach (Cheng et al., 2024).</p>
+<p><strong>Challenges</strong>:</p>
+<ul>
+<li class=""><strong>Uneven Terrain</strong>: Stairs, ramps, and outdoor trails violate the flat-ground assumptions of ZMP methods. Learning-based controllers show better generalization but require extensive sim-to-real tuning.</li>
+<li class=""><strong>Energy Efficiency</strong>: Humans walk at ~280 W metabolic power; humanoid robots consume 500-1,500 W for comparable speeds. Improving efficiency requires better actuators (series elastic actuators, artificial muscles) and optimized gaits.</li>
+<li class=""><strong>Recovery from Disturbances</strong>: Humans unconsciously recover from slips and pushes using ankle/hip strategies. Robots require fast reflexes (500+ Hz control loops) and fall detection (trigger protective responses when recovery fails).</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="32-dexterous-manipulation-in-unstructured-environments">3.2 Dexterous Manipulation in Unstructured Environments<a href="#32-dexterous-manipulation-in-unstructured-environments" class="hash-link" aria-label="Direct link to 3.2 Dexterous Manipulation in Unstructured Environments" title="Direct link to 3.2 Dexterous Manipulation in Unstructured Environments" translate="no">​</a></h3>
+<p>Human hands have ~20 degrees of freedom (DOF) spread across fingers, enabling a vast manipulation repertoire: power grasps (holding a hammer), precision grasps (picking up a coin), in-hand manipulation (rotating a pen). Replicating this dexterity robotically is the focus of decades of research.</p>
+<p><strong>Challenges</strong>:</p>
+<p><strong>Contact Modeling</strong>: Grasping involves complex contact dynamics (friction, slip, deformation). Physics simulators traditionally struggle with contact—Isaac Sim&#x27;s PhysX engine uses penalty-based contact, which introduces spurious oscillations. Newer approaches like NVIDIA&#x27;s Material Point Method (MPM) and differentiable simulation (DiffTaichi) enable gradient-based optimization through contact.</p>
+<p><strong>Sensor Integration</strong>: Tactile sensing (BioTac, ReSkin) provides rich feedback about contact forces and slip, but fusing vision + tactile data requires multi-modal learning. Meta&#x27;s DIGIT tactile sensor ($300/unit) is making high-resolution tactile sensing accessible.</p>
+<p><strong>Generalization</strong>: Trained on 1,000 objects, can a robot grasp object 1,001? Vision-language models help here: RT-2 (Google DeepMind) uses CLIP embeddings to generalize grasping policies to novel objects by reasoning about visual similarity (Brohan et al., 2023).</p>
+<p><strong>Imitation Learning</strong>: Rather than hand-coding grasp planners, modern approaches learn from demonstrations. OpenVLA was trained on 970,000 robot trajectories across 20+ institutions, learning to manipulate 10,000+ object categories (Kim et al., 2024).</p>
+<p><strong>State of the Art</strong>: Shadow Dexterous Hand (24 DOF, $100,000) and Allegro Hand (16 DOF, $15,000) are research standards. Commercial platforms like Figure 02 use simpler 6 DOF grippers, sacrificing dexterity for reliability. The &quot;sweet spot&quot; for general-purpose manipulation appears to be 3-finger grippers with compliant joints (force-torque sensing).</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="33-real-time-perception-and-decision-making">3.3 Real-Time Perception and Decision-Making<a href="#33-real-time-perception-and-decision-making" class="hash-link" aria-label="Direct link to 3.3 Real-Time Perception and Decision-Making" title="Direct link to 3.3 Real-Time Perception and Decision-Making" translate="no">​</a></h3>
+<p>Humanoids operate in dynamic, unstructured environments where the world changes faster than planning cycles. A child running across a robot&#x27;s path, a door blowing open, or a wet floor requires immediate reaction—there&#x27;s no time for multi-second planning algorithms.</p>
+<p><strong>Perception Latency Budget</strong>:</p>
+<ul>
+<li class=""><strong>Sensing</strong>: Cameras capture frames at 30-60 Hz (16-33 ms per frame)</li>
+<li class=""><strong>Object Detection</strong>: YOLOv8 inference on NVIDIA Jetson Orin takes ~20-40 ms</li>
+<li class=""><strong>Pose Estimation</strong>: 6-DOF object pose (from RGB-D) adds ~30-50 ms</li>
+<li class=""><strong>Planning</strong>: MPC solves an optimization problem in ~50-100 ms</li>
+<li class=""><strong>Total Latency</strong>: 100-200 ms (compare to human reaction time of 150-250 ms)</li>
+</ul>
+<p><strong>Decision-Making Architectures</strong>:</p>
+<p><strong>Hybrid Systems</strong>: Combine reactive (fast, local) and deliberative (slow, global) planning. Example: a base-level controller maintains balance at 500 Hz, while a mid-level planner updates footstep plans at 10 Hz, and a high-level task planner operates at 1 Hz.</p>
+<p><strong>End-to-End VLA Models</strong>: OpenVLA and RT-2 output actions directly from vision at ~10-30 Hz, bypassing explicit planning. This works remarkably well for tabletop manipulation but struggles with long-horizon tasks (e.g., &quot;clean the kitchen&quot; requires 100+ subtasks).</p>
+<p><strong>Challenges</strong>:</p>
+<ul>
+<li class=""><strong>Occlusions</strong>: A humanoid cannot see its own hands when reaching behind objects. This requires predictive models (world models) to infer hidden state.</li>
+<li class=""><strong>Partial Observability</strong>: Cameras have limited field of view. Mobile manipulation (e.g., opening a fridge) requires active perception (move head to gather information).</li>
+<li class=""><strong>Failure Detection</strong>: When should a robot abort a task? Learning-based policies lack introspection—they don&#x27;t &quot;know&quot; they&#x27;re failing. Uncertainty quantification (epistemic uncertainty from Bayesian neural networks) is an active research area.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="34-the-sim-to-real-gap">3.4 The Sim-to-Real Gap<a href="#34-the-sim-to-real-gap" class="hash-link" aria-label="Direct link to 3.4 The Sim-to-Real Gap" title="Direct link to 3.4 The Sim-to-Real Gap" translate="no">​</a></h3>
+<p>Training robots in simulation is 10,000× faster than real-world training (parallelizable across thousands of GPUs) but introduces a critical challenge: simulated physics never perfectly match reality. Small discrepancies—friction coefficients, motor delays, sensor noise—can cause policies that work flawlessly in simulation to fail catastrophically on hardware.</p>
+<p><strong>Sources of Sim-to-Real Gap</strong>:</p>
+<p><strong>Physics Modeling Errors</strong>: Isaac Sim uses PhysX for rigid body dynamics, which assumes instantaneous collision resolution. Real contacts are compliant—objects deform over milliseconds. This causes simulated grasps to be unrealistically rigid.</p>
+<p><strong>Sensor Discrepancies</strong>: Simulated cameras have perfect optics (no lens distortion, bloom, motion blur). Real cameras suffer from auto-exposure artifacts, rolling shutter, and compression artifacts (JPEG).</p>
+<p><strong>Actuator Dynamics</strong>: Simulated motors have zero delay and infinite bandwidth. Real motors (especially servo motors in humanoids) have 5-20 ms delays and torque limits that vary with battery voltage.</p>
+<p><strong>Bridging the Gap</strong>:</p>
+<p><strong>Domain Randomization (DR)</strong>: Randomize simulation parameters (friction: 0.3–0.9, mass: ±20%, lighting: day/night) during training. The policy learns to be robust to uncertainty, improving real-world transfer. NVIDIA&#x27;s Isaac Gym uses DR extensively (Makoviychuk et al., 2021).</p>
+<p><strong>Privileged Learning</strong>: Train with access to ground-truth state (e.g., exact object poses) in simulation, then distill to a vision-based policy. The teacher policy guides the student to ignore spurious visual features (shadows, reflections).</p>
+<p><strong>Sim-to-Real Fine-Tuning</strong>: Pre-train in simulation, then fine-tune with 10-100 real-world demonstrations. This combines the sample efficiency of simulation with the accuracy of real-world data.</p>
+<p><strong>System Identification</strong>: Measure real robot parameters (link masses, friction coefficients, motor time constants) and update the simulator. Tools like MuJoCo&#x27;s <code>mj_ray</code> and Isaac Sim&#x27;s system ID workflows automate this.</p>
+<p><strong>Case Study</strong>: Berkeley&#x27;s Octo model was trained on 800,000 simulated trajectories (Isaac Sim) and 25,000 real-world demonstrations. It achieved 87% success on novel manipulation tasks in unseen environments—compared to 12% for pure sim-to-real transfer (Padalkar et al., 2024). The key insight: combining large-scale simulation with modest real-world data beats either alone.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="4-book-roadmap">4. Book Roadmap<a href="#4-book-roadmap" class="hash-link" aria-label="Direct link to 4. Book Roadmap" title="Direct link to 4. Book Roadmap" translate="no">​</a></h2>
+<p>This textbook is organized into six parts, progressing from foundational skills to cutting-edge Physical AI research. Each part builds on previous concepts while remaining modular—practitioners focused on vision can skip locomotion chapters, and vice versa.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="41-part-1-foundations--ros-2-chapters-1-4">4.1 Part 1: Foundations &amp; ROS 2 (Chapters 1-4)<a href="#41-part-1-foundations--ros-2-chapters-1-4" class="hash-link" aria-label="Direct link to 4.1 Part 1: Foundations &amp; ROS 2 (Chapters 1-4)" title="Direct link to 4.1 Part 1: Foundations &amp; ROS 2 (Chapters 1-4)" translate="no">​</a></h3>
+<p><strong>Goal</strong>: Establish the software and conceptual foundation for Physical AI development.</p>
+<p><strong>Chapter 1</strong> (this chapter): Physical AI landscape, technical challenges, humanoid platforms
+<strong>Chapter 2</strong>: Development environment setup—Ubuntu 22.04, ROS 2 Iron, Isaac Sim 2024.2, CUDA
+<strong>Chapter 3</strong>: ROS 2 fundamentals—nodes, topics, services, actions, launch files, QoS policies
+<strong>Chapter 4</strong>: Robot description—URDF, SDF, Xacro for humanoids; collision geometry, inertial properties</p>
+<p><strong>Hands-On Projects</strong>:</p>
+<ul>
+<li class="">Set up dual-boot workstation with ROS 2 and Isaac Sim (Chapter 2)</li>
+<li class="">Build a multi-node ROS 2 system with sensor simulation, filtering, and action servers (Chapter 3)</li>
+<li class="">Create a custom humanoid URDF with 12-23 DOF and visualize in RViz2 (Chapter 4)</li>
+</ul>
+<p><strong>Learning Outcomes</strong>: By the end of Part 1, you will have a working ROS 2 + Isaac Sim environment and understand the middleware architecture underlying modern robot software.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="42-part-2-digital-twins--simulation-mastery-chapters-5-8">4.2 Part 2: Digital Twins &amp; Simulation Mastery (Chapters 5-8)<a href="#42-part-2-digital-twins--simulation-mastery-chapters-5-8" class="hash-link" aria-label="Direct link to 4.2 Part 2: Digital Twins &amp; Simulation Mastery (Chapters 5-8)" title="Direct link to 4.2 Part 2: Digital Twins &amp; Simulation Mastery (Chapters 5-8)" translate="no">​</a></h3>
+<p><strong>Goal</strong>: Master GPU-accelerated simulation for generating training data and benchmarking algorithms.</p>
+<p><strong>Chapter 5</strong>: Gazebo Harmonic—basic simulation, sensor plugins, world files
+<strong>Chapter 6</strong>: Isaac Sim introduction—USD scenes, PhysX dynamics, RTX rendering
+<strong>Chapter 7</strong>: Isaac Sim advanced—domain randomization, synthetic data generation, Isaac ROS integration
+<strong>Chapter 8</strong>: Simulation benchmarking—measuring FPS, memory usage, physics accuracy; profiling GPU kernels</p>
+<p><strong>Hands-On Projects</strong>:</p>
+<ul>
+<li class="">Simulate a humanoid navigating a warehouse environment with procedural obstacles (Chapter 6)</li>
+<li class="">Generate 100,000 synthetic RGB-D images with domain randomization for object detection (Chapter 7)</li>
+<li class="">Profile simulation performance on RTX 4070 Ti vs. RTX 4090 (Chapter 8)</li>
+</ul>
+<p><strong>Learning Outcomes</strong>: Run simulations at 60-120 FPS with photorealistic rendering, generate diverse training datasets, and benchmark physics accuracy against real-world data.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="43-part-3-perception--edge-brain-chapters-9-12">4.3 Part 3: Perception &amp; Edge Brain (Chapters 9-12)<a href="#43-part-3-perception--edge-brain-chapters-9-12" class="hash-link" aria-label="Direct link to 4.3 Part 3: Perception &amp; Edge Brain (Chapters 9-12)" title="Direct link to 4.3 Part 3: Perception &amp; Edge Brain (Chapters 9-12)" translate="no">​</a></h3>
+<p><strong>Goal</strong>: Build vision systems for object detection, pose estimation, and point cloud processing; deploy on edge hardware.</p>
+<p><strong>Chapter 9</strong>: Computer vision fundamentals—camera models, calibration, feature detection (SIFT, ORB)
+<strong>Chapter 10</strong>: Object detection—YOLOv8, Mask R-CNN, vision transformers (DINO, Grounding DINO)
+<strong>Chapter 11</strong>: 3D perception—point cloud segmentation (PointNet++), 6-DOF pose estimation (FoundationPose)
+<strong>Chapter 12</strong>: Edge deployment—quantization (INT8, FP16), TensorRT optimization, deploying on Jetson Orin Nano</p>
+<p><strong>Hands-On Projects</strong>:</p>
+<ul>
+<li class="">Train YOLOv8 on custom dataset of household objects with 95% mAP@0.5 (Chapter 10)</li>
+<li class="">Estimate 6-DOF poses of tabletop objects with &lt;5 mm translation error (Chapter 11)</li>
+<li class="">Deploy perception pipeline on Jetson Orin Nano running at ≥10 Hz (Chapter 12)</li>
+</ul>
+<p><strong>Learning Outcomes</strong>: Build real-time vision systems achieving state-of-the-art accuracy on robotic manipulation tasks, optimized for 15W power budgets.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="44-part-4-embodied-cognition--vla-models-chapters-13-16">4.4 Part 4: Embodied Cognition &amp; VLA Models (Chapters 13-16)<a href="#44-part-4-embodied-cognition--vla-models-chapters-13-16" class="hash-link" aria-label="Direct link to 4.4 Part 4: Embodied Cognition &amp; VLA Models (Chapters 13-16)" title="Direct link to 4.4 Part 4: Embodied Cognition &amp; VLA Models (Chapters 13-16)" translate="no">​</a></h3>
+<p><strong>Goal</strong>: Understand and deploy Vision-Language-Action models for general-purpose manipulation.</p>
+<p><strong>Chapter 13</strong>: Imitation learning—behavioral cloning, DAgger, inverse reinforcement learning
+<strong>Chapter 14</strong>: VLA model architectures—RT-1, RT-2, OpenVLA; vision encoders (CLIP, DINOv2), action tokenization
+<strong>Chapter 15</strong>: Training OpenVLA—dataset collection (ROS 2 bag recording), hyperparameter tuning, multi-GPU training (DeepSpeed)
+<strong>Chapter 16</strong>: Fine-tuning and prompt engineering—few-shot adaptation, language-conditioned policies, failure recovery</p>
+<p><strong>Hands-On Projects</strong>:</p>
+<ul>
+<li class="">Fine-tune OpenVLA on 500 demonstrations of custom manipulation tasks (Chapter 15)</li>
+<li class="">Deploy VLA policy controlling humanoid arms with &lt;300 ms latency (Chapter 16)</li>
+</ul>
+<p><strong>Learning Outcomes</strong>: Train and deploy language-conditioned manipulation policies that generalize to novel objects and instructions.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="45-part-5-bipedal-locomotion--whole-body-control-chapters-17-19">4.5 Part 5: Bipedal Locomotion &amp; Whole-Body Control (Chapters 17-19)<a href="#45-part-5-bipedal-locomotion--whole-body-control-chapters-17-19" class="hash-link" aria-label="Direct link to 4.5 Part 5: Bipedal Locomotion &amp; Whole-Body Control (Chapters 17-19)" title="Direct link to 4.5 Part 5: Bipedal Locomotion &amp; Whole-Body Control (Chapters 17-19)" translate="no">​</a></h3>
+<p><strong>Goal</strong>: Implement walking and balancing controllers for humanoid robots.</p>
+<p><strong>Chapter 17</strong>: Kinematics—forward kinematics (DH parameters), inverse kinematics (pseudo-inverse, FABRIK, IKFast)
+<strong>Chapter 18</strong>: Bipedal walking—ZMP planning, MPC for locomotion, footstep planning on uneven terrain
+<strong>Chapter 19</strong>: Whole-body control—hierarchical QP (quadratic programming), operational space control, torque control</p>
+<p><strong>Hands-On Projects</strong>:</p>
+<ul>
+<li class="">Implement IK solver for 7-DOF humanoid arm (Chapter 17)</li>
+<li class="">Deploy MPC walking controller achieving 1.0 m/s walking speed in Isaac Sim (Chapter 18)</li>
+<li class="">Integrate arm manipulation during walking (e.g., carrying a tray) using whole-body QP (Chapter 19)</li>
+</ul>
+<p><strong>Learning Outcomes</strong>: Program humanoids to walk, balance, and manipulate simultaneously using optimization-based control.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="46-part-6-capstone-integration--sim-to-real-transfer-chapters-20-21">4.6 Part 6: Capstone Integration &amp; Sim-to-Real Transfer (Chapters 20-21)<a href="#46-part-6-capstone-integration--sim-to-real-transfer-chapters-20-21" class="hash-link" aria-label="Direct link to 4.6 Part 6: Capstone Integration &amp; Sim-to-Real Transfer (Chapters 20-21)" title="Direct link to 4.6 Part 6: Capstone Integration &amp; Sim-to-Real Transfer (Chapters 20-21)" translate="no">​</a></h3>
+<p><strong>Goal</strong>: Integrate all systems into an end-to-end autonomous humanoid; transfer to real hardware.</p>
+<p><strong>Chapter 20</strong>: Capstone project—build an autonomous humanoid that navigates a home environment, finds objects, and delivers them on verbal command
+<strong>Chapter 21</strong>: Sim-to-real transfer—domain randomization, system identification, hardware debugging, safety protocols</p>
+<p><strong>Capstone Specifications</strong>:</p>
+<ul>
+<li class=""><strong>Task</strong>: &quot;Find the red mug in the kitchen and bring it to the living room table&quot;</li>
+<li class=""><strong>Components</strong>: VLA policy (language understanding → manipulation), MPC walking, SLAM navigation, YOLOv8 detection</li>
+<li class=""><strong>Performance Target</strong>: ≥12 Hz end-to-end pipeline on Jetson Orin Nano, 80% success rate on 10 test runs</li>
+</ul>
+<p><strong>Learning Outcomes</strong>: Deploy a fully autonomous humanoid system and troubleshoot the inevitable sim-to-real discrepancies.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="5-prerequisites-and-setup-overview">5. Prerequisites and Setup Overview<a href="#5-prerequisites-and-setup-overview" class="hash-link" aria-label="Direct link to 5. Prerequisites and Setup Overview" title="Direct link to 5. Prerequisites and Setup Overview" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="51-required-skills-python-deep-learning-linux-cli">5.1 Required Skills: Python, Deep Learning, Linux CLI<a href="#51-required-skills-python-deep-learning-linux-cli" class="hash-link" aria-label="Direct link to 5.1 Required Skills: Python, Deep Learning, Linux CLI" title="Direct link to 5.1 Required Skills: Python, Deep Learning, Linux CLI" translate="no">​</a></h3>
+<p>This textbook assumes you have the following background. If you&#x27;re rusty on any topic, the recommended refresher resources are provided.</p>
+<p><strong>Python Programming (Intermediate Level)</strong></p>
+<ul>
+<li class=""><strong>Required</strong>: Functions, classes, NumPy arrays, file I/O, pip/conda package management</li>
+<li class=""><strong>Nice-to-Have</strong>: Decorators, async/await, type hints</li>
+<li class=""><strong>Refresher</strong>: &quot;Fluent Python&quot; (Ramalho, 2022) or Python.org tutorials</li>
+</ul>
+<p><strong>Deep Learning Fundamentals</strong></p>
+<ul>
+<li class=""><strong>Required</strong>: Neural network basics (backpropagation, SGD), CNNs (convolution, pooling), transformers (self-attention), PyTorch basics (tensors, autograd, dataloaders)</li>
+<li class=""><strong>Nice-to-Have</strong>: Reinforcement learning (Q-learning, policy gradients), generative models (VAEs, diffusion)</li>
+<li class=""><strong>Refresher</strong>: &quot;Deep Learning&quot; (Goodfellow et al., 2016) or fast.ai course</li>
+</ul>
+<p><strong>Linux Command Line</strong></p>
+<ul>
+<li class=""><strong>Required</strong>: Navigation (cd, ls, pwd), file operations (cp, mv, rm), text editors (nano or vim), SSH, package managers (apt, snap)</li>
+<li class=""><strong>Nice-to-Have</strong>: Shell scripting (bash), process management (htop, kill), networking (ifconfig, ping)</li>
+<li class=""><strong>Refresher</strong>: &quot;The Linux Command Line&quot; (Shotts, 2019) or linuxjourney.com</li>
+</ul>
+<p><strong>Mathematics</strong></p>
+<ul>
+<li class=""><strong>Required</strong>: Linear algebra (matrix multiplication, eigenvalues, SVD), calculus (gradients, chain rule), basic probability (Bayes&#x27; rule, expectations)</li>
+<li class=""><strong>Nice-to-Have</strong>: Optimization (convex optimization, KKT conditions), differential equations (ODEs for dynamics)</li>
+<li class=""><strong>Refresher</strong>: &quot;Mathematics for Machine Learning&quot; (Deisenroth et al., 2020)</li>
+</ul>
+<p><strong>Estimated Time to Acquire Prerequisites</strong>: If you lack the required skills, budget 2-4 months of part-time study (10 hours/week) to reach the necessary level. The good news: you don&#x27;t need to be an expert—comfort with the concepts is sufficient.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="52-hardware-requirements-budgetmidpremium-tiers">5.2 Hardware Requirements: Budget/Mid/Premium Tiers<a href="#52-hardware-requirements-budgetmidpremium-tiers" class="hash-link" aria-label="Direct link to 5.2 Hardware Requirements: Budget/Mid/Premium Tiers" title="Direct link to 5.2 Hardware Requirements: Budget/Mid/Premium Tiers" translate="no">​</a></h3>
+<p>Physical AI development is computationally intensive, particularly simulation and model training. We define three hardware tiers to accommodate different budgets:</p>
+<p><strong>Budget Tier (~$1,500 total)</strong></p>
+<ul>
+<li class=""><strong>GPU</strong>: NVIDIA RTX 4070 Ti (12 GB VRAM, $700)</li>
+<li class=""><strong>CPU</strong>: AMD Ryzen 5 5600 (6 cores, $140)</li>
+<li class=""><strong>RAM</strong>: 32 GB DDR4 ($80)</li>
+<li class=""><strong>Storage</strong>: 1 TB NVMe SSD ($70)</li>
+<li class=""><strong>Edge Device</strong>: NVIDIA Jetson Orin Nano 8GB ($249)</li>
+<li class=""><strong>Performance</strong>: Isaac Sim at 30-40 FPS (1080p), train YOLOv8 in 4 hours, OpenVLA fine-tuning in 12-16 hours (500 demos)</li>
+<li class=""><strong>Limitations</strong>: Cannot run large VLA models (7B parameters) in full precision; requires INT8 quantization</li>
+</ul>
+<p><strong>Mid-Range Tier (~$3,000 total)</strong></p>
+<ul>
+<li class=""><strong>GPU</strong>: NVIDIA RTX 4080 (16 GB VRAM, $1,100)</li>
+<li class=""><strong>CPU</strong>: AMD Ryzen 7 7700X (8 cores, $280)</li>
+<li class=""><strong>RAM</strong>: 64 GB DDR5 ($200)</li>
+<li class=""><strong>Storage</strong>: 2 TB NVMe SSD ($150)</li>
+<li class=""><strong>Edge Device</strong>: NVIDIA Jetson Orin NX 16GB ($599)</li>
+<li class=""><strong>Performance</strong>: Isaac Sim at 60-80 FPS, OpenVLA fine-tuning in 6-8 hours</li>
+<li class=""><strong>Sweet Spot</strong>: Recommended for serious learners and researchers</li>
+</ul>
+<p><strong>Premium Tier (~$6,000 total)</strong></p>
+<ul>
+<li class=""><strong>GPU</strong>: NVIDIA RTX 4090 (24 GB VRAM, $1,800)</li>
+<li class=""><strong>CPU</strong>: AMD Ryzen 9 7950X (16 cores, $550)</li>
+<li class=""><strong>RAM</strong>: 128 GB DDR5 ($500)</li>
+<li class=""><strong>Storage</strong>: 4 TB NVMe SSD ($350)</li>
+<li class=""><strong>Edge Device</strong>: NVIDIA Jetson AGX Orin 64GB ($1,999)</li>
+<li class=""><strong>Performance</strong>: Isaac Sim at 120+ FPS, train OpenVLA from scratch in 48 hours (970K demos), multi-GPU experiments</li>
+<li class=""><strong>Use Case</strong>: Academic research labs, industry prototyping</li>
+</ul>
+<p><strong>Cloud Alternatives</strong>: If upfront hardware costs are prohibitive, consider cloud GPU instances:</p>
+<ul>
+<li class=""><strong>AWS EC2 g5.xlarge</strong> (NVIDIA A10G, 24 GB VRAM): $1.50/hour → $360/month (240 hours)</li>
+<li class=""><strong>Paperspace Gradient</strong> (RTX 4000 Ada): $0.76/hour → $180/month</li>
+<li class=""><strong>Lambda Labs</strong> (RTX 4090): $1.10/hour → $260/month</li>
+</ul>
+<p><strong>Note</strong>: Cloud incurs ongoing costs but eliminates upfront investment. Budget ~$200-$400/month for serious development.</p>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="53-software-stack-overview-ros-2-isaac-sim-openvla-jetson">5.3 Software Stack Overview: ROS 2, Isaac Sim, OpenVLA, Jetson<a href="#53-software-stack-overview-ros-2-isaac-sim-openvla-jetson" class="hash-link" aria-label="Direct link to 5.3 Software Stack Overview: ROS 2, Isaac Sim, OpenVLA, Jetson" title="Direct link to 5.3 Software Stack Overview: ROS 2, Isaac Sim, OpenVLA, Jetson" translate="no">​</a></h3>
+<p><strong>Operating System</strong>: Ubuntu 22.04 LTS (Jammy Jellyfish)</p>
+<ul>
+<li class=""><strong>Why</strong>: ROS 2 Iron officially supports Ubuntu 22.04; Isaac Sim requires Ubuntu 20.04+ or 22.04</li>
+<li class=""><strong>Alternative</strong>: Ubuntu 24.04 LTS + ROS 2 Jazzy (newer, but some third-party packages lag)</li>
+</ul>
+<p><strong>Robot Middleware</strong>: ROS 2 Iron Irwini (released May 2023, EOL November 2024) or ROS 2 Jazzy Jalisco (May 2024, LTS until May 2029)</p>
+<ul>
+<li class=""><strong>Why ROS 2 Over ROS 1</strong>: Real-time support (DDS middleware), security (DDS-Security), multi-robot systems</li>
+<li class=""><strong>Key Packages</strong>: MoveIt 2 (motion planning), Nav2 (navigation), ros2_control (low-level control)</li>
+</ul>
+<p><strong>Simulation</strong>: NVIDIA Isaac Sim 2024.2 (requires RTX GPU, PhysX 5.x physics, RTX raytracing)</p>
+<ul>
+<li class=""><strong>Alternative</strong>: Gazebo Harmonic (free, CPU-based physics, less photorealistic)</li>
+<li class=""><strong>Why Isaac Sim</strong>: GPU-accelerated parallelizable simulation (10-100× faster than CPU), domain randomization, synthetic data generation</li>
+</ul>
+<p><strong>Deep Learning</strong>: PyTorch 2.0+ with CUDA 12.x</p>
+<ul>
+<li class=""><strong>Why PyTorch Over TensorFlow</strong>: Dominant in robotics research (90%+ of papers use PyTorch), dynamic computation graphs, stronger ecosystem (Hugging Face)</li>
+</ul>
+<p><strong>Vision-Language-Action Models</strong>: OpenVLA 7B (open-source, Apache 2.0 license)</p>
+<ul>
+<li class=""><strong>Alternatives</strong>: RT-2 (proprietary, Google-only), Octo (93M parameters, lightweight)</li>
+</ul>
+<p><strong>Edge Deployment</strong>: NVIDIA Jetson Orin Nano 8GB ($249)</p>
+<ul>
+<li class=""><strong>Software</strong>: JetPack 6.0 (Ubuntu 22.04, CUDA 12.x, TensorRT 8.6)</li>
+<li class=""><strong>Performance</strong>: 40 TOPS (INT8), 10 TOPS (FP16)</li>
+</ul>
+<p><strong>Installation Roadmap</strong> (detailed in Chapter 2):</p>
+<ol>
+<li class="">Install Ubuntu 22.04 (dual-boot or dedicated machine)</li>
+<li class="">Install NVIDIA driver 550+ and CUDA 12.x</li>
+<li class="">Install ROS 2 Iron via apt</li>
+<li class="">Install Isaac Sim 2024.2 via Omniverse Launcher (~50 GB download)</li>
+<li class="">Install PyTorch 2.0 and Hugging Face Transformers</li>
+<li class="">Flash Jetson Orin Nano with JetPack 6.0</li>
+</ol>
+<p><strong>Estimated Setup Time</strong>: 8-12 hours (including downloads, troubleshooting driver conflicts)</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="6-how-to-use-this-book">6. How to Use This Book<a href="#6-how-to-use-this-book" class="hash-link" aria-label="Direct link to 6. How to Use This Book" title="Direct link to 6. How to Use This Book" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="61-self-study-track-15-20-hoursweek-12-14-months">6.1 Self-Study Track (15-20 hours/week, 12-14 months)<a href="#61-self-study-track-15-20-hoursweek-12-14-months" class="hash-link" aria-label="Direct link to 6.1 Self-Study Track (15-20 hours/week, 12-14 months)" title="Direct link to 6.1 Self-Study Track (15-20 hours/week, 12-14 months)" translate="no">​</a></h3>
+<p><strong>Profile</strong>: Working professionals, independent researchers, gap-year students
+<strong>Goal</strong>: Complete all 21 chapters, labs, and the capstone project at your own pace</p>
+<p><strong>Recommended Schedule</strong>:</p>
+<ul>
+<li class=""><strong>Months 1-2</strong>: Part 1 (Foundations &amp; ROS 2)—Chapters 1-4, ~40 hours</li>
+<li class=""><strong>Months 3-4</strong>: Part 2 (Simulation Mastery)—Chapters 5-8, ~60 hours</li>
+<li class=""><strong>Months 5-7</strong>: Part 3 (Perception &amp; Edge)—Chapters 9-12, ~80 hours</li>
+<li class=""><strong>Months 8-10</strong>: Part 4 (VLA Models)—Chapters 13-16, ~90 hours</li>
+<li class=""><strong>Months 11-12</strong>: Part 5 (Locomotion)—Chapters 17-19, ~70 hours</li>
+<li class=""><strong>Months 13-14</strong>: Part 6 (Capstone)—Chapters 20-21, ~80 hours</li>
+<li class=""><strong>Total</strong>: ~420 hours (~15 hours/week for 14 months)</li>
+</ul>
+<p><strong>Tips for Success</strong>:</p>
+<ul>
+<li class=""><strong>Start Small</strong>: Complete Chapter 2&#x27;s quickstart lab before diving into theory</li>
+<li class=""><strong>Join Communities</strong>: ROS Discourse (discourse.ros.org), Isaac Sim forums, Hugging Face Discord</li>
+<li class=""><strong>Track Progress</strong>: Use GitHub to version-control your code; document learnings in a blog</li>
+<li class=""><strong>Budget 30% Extra Time for Troubleshooting</strong>: Driver conflicts, Isaac Sim crashes, and ROS 2 build errors are inevitable</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="62-university-course-track-13-week-semester-mapping">6.2 University Course Track (13-week semester mapping)<a href="#62-university-course-track-13-week-semester-mapping" class="hash-link" aria-label="Direct link to 6.2 University Course Track (13-week semester mapping)" title="Direct link to 6.2 University Course Track (13-week semester mapping)" translate="no">​</a></h3>
+<p><strong>Profile</strong>: Graduate students in robotics, computer science, or mechanical engineering
+<strong>Course Structure</strong>: 3-credit course (3 hours lecture + 3 hours lab per week)</p>
+<p><strong>Semester Mapping</strong> (assumes prior ROS 2 experience):</p>
+<ul>
+<li class=""><strong>Weeks 1-2</strong>: Chapters 1-2 (intro + setup)—Homework: Environment setup validation</li>
+<li class=""><strong>Weeks 3-4</strong>: Chapters 5-6 (Gazebo + Isaac Sim)—Lab: Simulate humanoid walking</li>
+<li class=""><strong>Weeks 5-6</strong>: Chapters 9-10 (Vision fundamentals + YOLO)—Homework: Train object detector</li>
+<li class=""><strong>Weeks 7-8</strong>: Chapters 11-12 (3D perception + edge deployment)—Lab: Deploy on Jetson</li>
+<li class=""><strong>Weeks 9-10</strong>: Chapters 13-14 (VLA models)—Homework: Run OpenVLA inference</li>
+<li class=""><strong>Weeks 11-12</strong>: Chapters 17-18 (Kinematics + walking)—Lab: MPC walking controller</li>
+<li class=""><strong>Week 13</strong>: Chapter 20 (Capstone integration)—Final Project: Autonomous fetch task</li>
+</ul>
+<p><strong>Grading</strong>:</p>
+<ul>
+<li class=""><strong>Labs (40%)</strong>: 6 labs, graded on correctness and performance benchmarks</li>
+<li class=""><strong>Homework (30%)</strong>: 4 assignments, graded on implementation quality</li>
+<li class=""><strong>Final Project (30%)</strong>: Capstone project with 10-minute demo video</li>
+</ul>
+<p><strong>Instructor Resources</strong> (available upon request from academic email):</p>
+<ul>
+<li class="">21 PowerPoint slide decks (40-60 slides each)</li>
+<li class="">Assignment prompts and solutions</li>
+<li class="">Grading rubrics</li>
+<li class="">Quiz question bank (50+ questions)</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_x4mB" id="63-industry-practitioner-track-focus-on-chapters-12-20">6.3 Industry Practitioner Track (Focus on Chapters 12-20)<a href="#63-industry-practitioner-track-focus-on-chapters-12-20" class="hash-link" aria-label="Direct link to 6.3 Industry Practitioner Track (Focus on Chapters 12-20)" title="Direct link to 6.3 Industry Practitioner Track (Focus on Chapters 12-20)" translate="no">​</a></h3>
+<p><strong>Profile</strong>: Robotics engineers at companies deploying humanoids, AI engineers transitioning from software to embodied AI
+<strong>Goal</strong>: Rapidly acquire skills needed for production humanoid systems</p>
+<p><strong>Fast-Track Path</strong> (~200 hours over 3-4 months):</p>
+<ol>
+<li class=""><strong>Skim Chapters 1-4</strong> (assume ROS 2 proficiency)</li>
+<li class=""><strong>Skim Chapters 5-8</strong> (assume simulation proficiency)</li>
+<li class=""><strong>Deep Dive: Chapter 12</strong> (Edge Deployment)—Critical for production: quantization, TensorRT, profiling</li>
+<li class=""><strong>Deep Dive: Chapters 13-16</strong> (VLA Models)—Core of modern manipulation policies</li>
+<li class=""><strong>Deep Dive: Chapters 17-19</strong> (Locomotion)—Only if deploying bipedal robots</li>
+<li class=""><strong>Deep Dive: Chapter 21</strong> (Sim-to-Real Transfer)—Critical bottleneck in deployment</li>
+</ol>
+<p><strong>Prioritization</strong>:</p>
+<ul>
+<li class=""><strong>Must-Read</strong>: Chapters 12-16, 21</li>
+<li class=""><strong>Nice-to-Have</strong>: Chapters 9-11 (vision), 17-19 (locomotion)</li>
+<li class=""><strong>Skip</strong>: Chapters 1-8 (if already proficient in ROS 2 and simulation)</li>
+</ul>
+<p><strong>Industry Case Studies</strong> (throughout the book):</p>
+<ul>
+<li class="">Deploying Figure 02 at BMW: Lessons on sim-to-real transfer (Chapter 21)</li>
+<li class="">Unitree G1 in warehouse logistics: Cost-performance tradeoffs (Chapter 1)</li>
+<li class="">Meta&#x27;s VLA model for manipulation: Scaling to 1M+ demonstrations (Chapter 15)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="7-further-reading">7. Further Reading<a href="#7-further-reading" class="hash-link" aria-label="Direct link to 7. Further Reading" title="Direct link to 7. Further Reading" translate="no">​</a></h2>
+<p>This chapter provided a high-level overview of Physical AI and humanoid robotics. For deeper technical dives, consult the following resources:</p>
+<p><strong>Books</strong>:</p>
+<ul>
+<li class="">Siciliano, B., &amp; Khatib, O. (Eds.). (2016). <em>Springer Handbook of Robotics</em> (2nd ed.). Springer. [Comprehensive reference covering kinematics, dynamics, perception, and control]</li>
+<li class="">Thrun, S., Burgard, W., &amp; Fox, D. (2005). <em>Probabilistic Robotics</em>. MIT Press. [Classic text on SLAM, localization, and Bayesian filtering]</li>
+<li class="">Levine, S. (2024). <em>Deep Reinforcement Learning for Robotics</em>. MIT Press. [Modern treatment of RL for manipulation and locomotion]</li>
+</ul>
+<p><strong>Survey Papers</strong>:</p>
+<ul>
+<li class="">Peng, X. B., et al. (2024). Learning agile locomotion via adversarial motion priors. <em>ACM Transactions on Graphics, 43</em>(2), 1-16. [State-of-the-art learning-based walking controllers]</li>
+<li class="">Brohan, A., et al. (2023). RT-2: Vision-language-action models transfer web knowledge to robotic control. <em>arXiv preprint arXiv:2307.15818</em>. [Seminal VLA model paper]</li>
+<li class="">Kim, H., et al. (2024). OpenVLA: An open-source vision-language-action model. <em>Conference on Robot Learning</em>. [Details on OpenVLA architecture and training]</li>
+</ul>
+<p><strong>Online Resources</strong>:</p>
+<ul>
+<li class="">ROS 2 Documentation: <a href="https://docs.ros.org/en/iron/" target="_blank" rel="noopener noreferrer" class="">https://docs.ros.org/en/iron/</a></li>
+<li class="">NVIDIA Isaac Sim Documentation: <a href="https://docs.omniverse.nvidia.com/isaacsim/latest/" target="_blank" rel="noopener noreferrer" class="">https://docs.omniverse.nvidia.com/isaacsim/latest/</a></li>
+<li class="">OpenVLA GitHub: <a href="https://github.com/openvla/openvla" target="_blank" rel="noopener noreferrer" class="">https://github.com/openvla/openvla</a></li>
+<li class="">Hugging Face Robotics: <a href="https://huggingface.co/spaces/robotics" target="_blank" rel="noopener noreferrer" class="">https://huggingface.co/spaces/robotics</a></li>
+</ul>
+<p><strong>Academic Conferences</strong> (to follow cutting-edge research):</p>
+<ul>
+<li class="">Conference on Robot Learning (CoRL)</li>
+<li class="">Robotics: Science and Systems (RSS)</li>
+<li class="">International Conference on Robotics and Automation (ICRA)</li>
+<li class="">International Conference on Intelligent Robots and Systems (IROS)</li>
+</ul>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="chapter-summary">Chapter Summary<a href="#chapter-summary" class="hash-link" aria-label="Direct link to Chapter Summary" title="Direct link to Chapter Summary" translate="no">​</a></h2>
+<p>This chapter introduced <strong>Physical AI</strong>—AI systems that perceive and manipulate the physical world through robotic embodiment. We explored the three-layer Physical AI stack (perception → cognition → action), examined commercial humanoids (Figure 02, Unitree G1, Tesla Optimus) and research platforms (Poppy, THOR, H1), and analyzed the core technical challenges: bipedal locomotion, dexterous manipulation, real-time decision-making, and sim-to-real transfer.</p>
+<p>The book&#x27;s six-part structure progresses from ROS 2 foundations through simulation mastery, perception, VLA models, locomotion, and culminates in an autonomous humanoid capstone. Three learning tracks accommodate self-study learners (12-14 months), university courses (13-week semesters), and industry practitioners (focused on Chapters 12-21).</p>
+<p><strong>Key Takeaways</strong>:</p>
+<ol>
+<li class="">Physical AI bridges symbolic reasoning (LLMs) and physical interaction (robotics) through learned perception-action policies</li>
+<li class="">Humanoids are the ultimate embodied AI challenge, requiring simultaneous solutions to locomotion, manipulation, and perception</li>
+<li class="">Modern VLA models (OpenVLA, RT-2) learn end-to-end policies from millions of demonstrations, bypassing hand-engineered planners</li>
+<li class="">Sim-to-real transfer remains the critical bottleneck; domain randomization and privileged learning are key techniques</li>
+<li class="">Budget hardware ($1,500: RTX 4070 Ti + Jetson Orin Nano) suffices for learning; premium hardware ($6,000: RTX 4090) enables research</li>
+</ol>
+<p><strong>Next Steps</strong>: In Chapter 2, we&#x27;ll set up your development environment—installing Ubuntu 22.04, ROS 2 Iron, Isaac Sim 2024.2, and validating your first ROS 2 + Isaac Sim demo. By the end of Chapter 2, you&#x27;ll have a working humanoid simulation publishing joint states at 60 Hz.</p>
+<hr>
+<h2 class="anchor anchorTargetStickyNavbar_x4mB" id="references">References<a href="#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References" translate="no">​</a></h2>
+<p>Brohan, A., Brown, N., Carbajal, J., Chebotar, Y., Dabis, J., Finn, C., Gopalakrishnan, K., Hausman, K., Herzog, A., Hsu, J., Ibarz, J., Ichter, B., Irpan, A., Jackson, T., Jesmonth, S., Joshi, N. J., Julian, R., Kalashnikov, D., Kuang, Y., ... Zeng, A. (2023). RT-2: Vision-language-action models transfer web knowledge to robotic control. <em>arXiv preprint arXiv:2307.15818</em>.</p>
+<p>Cheng, X., Shi, K., Agarwal, A., &amp; Pathak, D. (2024). Extreme parkour with legged robots. <em>arXiv preprint arXiv:2309.14341</em>.</p>
+<p>Deisenroth, M. P., Faisal, A. A., &amp; Ong, C. S. (2020). <em>Mathematics for machine learning</em>. Cambridge University Press.</p>
+<p>Figure AI. (2024). Figure 02 capabilities demonstration. Retrieved from <a href="https://www.figure.ai/" target="_blank" rel="noopener noreferrer" class="">https://www.figure.ai/</a></p>
+<p>Goldman Sachs. (2024). <em>Humanoid robots: The next frontier in automation</em>. Goldman Sachs Global Investment Research.</p>
+<p>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep learning</em>. MIT Press.</p>
+<p>Huang, J. (2024). NVIDIA GTC 2024 keynote: The age of physical AI. <em>NVIDIA Developer Blog</em>. Retrieved from <a href="https://developer.nvidia.com/" target="_blank" rel="noopener noreferrer" class="">https://developer.nvidia.com/</a></p>
+<p>Kim, H., Pertsch, K., Lee, Y., &amp; Finn, C. (2024). OpenVLA: An open-source vision-language-action model for robotic manipulation. In <em>Proceedings of the Conference on Robot Learning</em> (CoRL 2024).</p>
+<p>Makoviychuk, V., Wawrzyniak, L., Guo, Y., Lu, M., Storey, K., Macklin, M., Hoeller, D., Rudin, N., Allshire, A., Handa, A., &amp; State, G. (2021). Isaac Gym: High performance GPU-based physics simulation for robot learning. <em>arXiv preprint arXiv:2108.10470</em>.</p>
+<p>Musk, E. (2024). Tesla Optimus Gen 2 demonstration. <em>Tesla AI Day 2024</em>. Retrieved from <a href="https://www.tesla.com/" target="_blank" rel="noopener noreferrer" class="">https://www.tesla.com/</a></p>
+<p>Padalkar, A., Pooley, A., Jain, A., Bewley, A., Herzog, A., Irpan, A., Khazatsky, A., Rai, A., Singh, A., Brohan, A., Burgess-Limerick, B., Cabi, S., Chan, C., Finn, C., Gentili, C., Gopalakrishnan, K., Hausman, K., Herzog, A., Hsu, J., ... Zeng, A. (2024). Open X-Embodiment: Robotic learning datasets and RT-X models. <em>arXiv preprint arXiv:2310.08864</em>.</p>
+<p>Pfeifer, R., &amp; Bongard, J. (2006). <em>How the body shapes the way we think: A new view of intelligence</em>. MIT Press.</p>
+<p>Ramalho, L. (2022). <em>Fluent Python</em> (2nd ed.). O&#x27;Reilly Media.</p>
+<p>Shotts, W. (2019). <em>The Linux command line</em> (2nd ed.). No Starch Press.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/robot_book/docs/intro"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Physical AI &amp; Humanoid Robotics</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/robot_book/docs/part1-foundations/development-environment-setup"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Chapter 2: Development Environment Setup - ROS 2, Isaac Sim, and Hardware</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_IS5x thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#1-what-is-physical-ai" class="table-of-contents__link toc-highlight">1. What is Physical AI?</a><ul><li><a href="#11-from-language-models-to-embodied-intelligence" class="table-of-contents__link toc-highlight">1.1 From Language Models to Embodied Intelligence</a></li><li><a href="#12-the-physical-ai-stack-perception--cognition--action" class="table-of-contents__link toc-highlight">1.2 The Physical AI Stack: Perception → Cognition → Action</a></li><li><a href="#13-humanoids-as-the-ultimate-embodied-ai-challenge" class="table-of-contents__link toc-highlight">1.3 Humanoids as the Ultimate Embodied AI Challenge</a></li></ul></li><li><a href="#2-the-humanoid-robotics-landscape-2024-2026" class="table-of-contents__link toc-highlight">2. The Humanoid Robotics Landscape (2024-2026)</a><ul><li><a href="#21-commercial-humanoids-figure-02-unitree-g1-tesla-optimus" class="table-of-contents__link toc-highlight">2.1 Commercial Humanoids: Figure 02, Unitree G1, Tesla Optimus</a></li><li><a href="#22-research-platforms-open-source-humanoids-poppy-thor-h1" class="table-of-contents__link toc-highlight">2.2 Research Platforms: Open-Source Humanoids (Poppy, THOR, H1)</a></li><li><a href="#23-industry-applications-warehousing-healthcare-manufacturing" class="table-of-contents__link toc-highlight">2.3 Industry Applications: Warehousing, Healthcare, Manufacturing</a></li></ul></li><li><a href="#3-technical-challenges" class="table-of-contents__link toc-highlight">3. Technical Challenges</a><ul><li><a href="#31-bipedal-locomotion-and-balance" class="table-of-contents__link toc-highlight">3.1 Bipedal Locomotion and Balance</a></li><li><a href="#32-dexterous-manipulation-in-unstructured-environments" class="table-of-contents__link toc-highlight">3.2 Dexterous Manipulation in Unstructured Environments</a></li><li><a href="#33-real-time-perception-and-decision-making" class="table-of-contents__link toc-highlight">3.3 Real-Time Perception and Decision-Making</a></li><li><a href="#34-the-sim-to-real-gap" class="table-of-contents__link toc-highlight">3.4 The Sim-to-Real Gap</a></li></ul></li><li><a href="#4-book-roadmap" class="table-of-contents__link toc-highlight">4. Book Roadmap</a><ul><li><a href="#41-part-1-foundations--ros-2-chapters-1-4" class="table-of-contents__link toc-highlight">4.1 Part 1: Foundations &amp; ROS 2 (Chapters 1-4)</a></li><li><a href="#42-part-2-digital-twins--simulation-mastery-chapters-5-8" class="table-of-contents__link toc-highlight">4.2 Part 2: Digital Twins &amp; Simulation Mastery (Chapters 5-8)</a></li><li><a href="#43-part-3-perception--edge-brain-chapters-9-12" class="table-of-contents__link toc-highlight">4.3 Part 3: Perception &amp; Edge Brain (Chapters 9-12)</a></li><li><a href="#44-part-4-embodied-cognition--vla-models-chapters-13-16" class="table-of-contents__link toc-highlight">4.4 Part 4: Embodied Cognition &amp; VLA Models (Chapters 13-16)</a></li><li><a href="#45-part-5-bipedal-locomotion--whole-body-control-chapters-17-19" class="table-of-contents__link toc-highlight">4.5 Part 5: Bipedal Locomotion &amp; Whole-Body Control (Chapters 17-19)</a></li><li><a href="#46-part-6-capstone-integration--sim-to-real-transfer-chapters-20-21" class="table-of-contents__link toc-highlight">4.6 Part 6: Capstone Integration &amp; Sim-to-Real Transfer (Chapters 20-21)</a></li></ul></li><li><a href="#5-prerequisites-and-setup-overview" class="table-of-contents__link toc-highlight">5. Prerequisites and Setup Overview</a><ul><li><a href="#51-required-skills-python-deep-learning-linux-cli" class="table-of-contents__link toc-highlight">5.1 Required Skills: Python, Deep Learning, Linux CLI</a></li><li><a href="#52-hardware-requirements-budgetmidpremium-tiers" class="table-of-contents__link toc-highlight">5.2 Hardware Requirements: Budget/Mid/Premium Tiers</a></li><li><a href="#53-software-stack-overview-ros-2-isaac-sim-openvla-jetson" class="table-of-contents__link toc-highlight">5.3 Software Stack Overview: ROS 2, Isaac Sim, OpenVLA, Jetson</a></li></ul></li><li><a href="#6-how-to-use-this-book" class="table-of-contents__link toc-highlight">6. How to Use This Book</a><ul><li><a href="#61-self-study-track-15-20-hoursweek-12-14-months" class="table-of-contents__link toc-highlight">6.1 Self-Study Track (15-20 hours/week, 12-14 months)</a></li><li><a href="#62-university-course-track-13-week-semester-mapping" class="table-of-contents__link toc-highlight">6.2 University Course Track (13-week semester mapping)</a></li><li><a href="#63-industry-practitioner-track-focus-on-chapters-12-20" class="table-of-contents__link toc-highlight">6.3 Industry Practitioner Track (Focus on Chapters 12-20)</a></li></ul></li><li><a href="#7-further-reading" class="table-of-contents__link toc-highlight">7. Further Reading</a></li><li><a href="#chapter-summary" class="table-of-contents__link toc-highlight">Chapter Summary</a></li><li><a href="#references" class="table-of-contents__link toc-highlight">References</a></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Book</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/robot_book/docs/intro">Introduction</a></li><li class="footer__item"><a class="footer__link-item" href="/robot_book/docs/part2-simulation/gazebo-basics">Part 2: Simulation</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/samiceto/robot_book" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_T11m"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://github.com/samiceto/robot_book/tree/master/code" target="_blank" rel="noopener noreferrer" class="footer__link-item">Code Examples<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_T11m"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2025 Physical AI & Humanoid Robotics Book. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>

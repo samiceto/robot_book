@@ -33,7 +33,7 @@ The book is organized into 6 parts covering 21 chapters:
 
 ### Get Started
 
-[Start Reading](/docs/frontmatter/preface) | [View Code Repositories](/resources) | [Hardware Guide](/docs/appendices/a-hardware-buyers-guide)
+[Start Reading](/docs/intro) | [View Code on GitHub](https://github.com/samiceto/robot_book/tree/master/code)
 
 ---
 

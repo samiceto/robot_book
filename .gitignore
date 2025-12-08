@@ -84,8 +84,11 @@ yarn-error.log*
 # Docusaurus
 .docusaurus/
 .cache/
-build/
+website/build/
 .DS_Store
+
+# IMPORTANT: Do NOT ignore /docs - it's needed for GitHub Pages!
+# The /docs folder contains the built site for deployment
 
 # IDEs
 .vscode/

@@ -251,7 +251,7 @@ def predict_maintenance(robot_history):
    - Alerts
 4. Test with 3 simulated robots
 
-**Validation**: Dashboard updates in real-time (<1s latency)
+**Validation**: Dashboard updates in real-time (&lt;1s latency)
 
 ---
 
@@ -264,7 +264,7 @@ Deploy 5-robot fleet for warehouse automation.
 - Remote telemetry dashboard
 - OTA update mechanism
 - Maintenance prediction
-- Operate for 24 hours with <10% downtime
+- Operate for 24 hours with &lt;10% downtime
 
 **Deliverables**:
 - Fleet management code

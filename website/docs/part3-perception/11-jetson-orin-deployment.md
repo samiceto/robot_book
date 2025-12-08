@@ -83,7 +83,7 @@ pip3 install ultralytics onnx onnxruntime-gpu
 | Precision | Model Size | Inference Speed | Accuracy Loss |
 |-----------|------------|-----------------|---------------|
 | FP32      | 100%       | 1x              | 0%            |
-| FP16      | 50%        | 2x              | <1%           |
+| FP16      | 50%        | 2x              | &lt;1%           |
 | INT8      | 25%        | 3-5x            | 1-3%          |
 
 ### Quantize YOLOv8

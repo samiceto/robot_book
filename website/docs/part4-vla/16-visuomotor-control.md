@@ -231,7 +231,7 @@ class SafetyMonitor:
 5. Measure success rate and latency
 
 **Validation**:
-- Inference: <100 ms
+- Inference: &lt;100 ms
 - Control frequency: >10 Hz
 - Success rate: >60%
 

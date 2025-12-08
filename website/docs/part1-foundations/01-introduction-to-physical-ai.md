@@ -101,7 +101,7 @@ The commercial humanoid market has exploded since 2023, driven by venture capita
 - **Capabilities**: Demonstrated in 2024 videos folding laundry, sorting objects, and performing delicate egg-handling tasks
 - **Key Innovation**: Vertical integration with Tesla's Full Self-Driving (FSD) stack. Optimus uses adapted versions of Tesla's vision transformers trained on billions of km of driving data (Musk, 2024).
 - **Deployment**: Internal use in Tesla factories for repetitive tasks; consumer model projected for 2026-2027
-- **Cost**: Projected <$20,000 at scale (Musk estimates $10,000-$15,000 by 2030)
+- **Cost**: Projected &lt;$20,000 at scale (Musk estimates $10,000-$15,000 by 2030)
 
 **Market Outlook**: Goldman Sachs estimates the humanoid robot market will reach $38 billion by 2035, with manufacturing and logistics as primary adopters (Goldman Sachs, 2024). The key enabler is cost reduction—Optimus and G1 target price points comparable to mid-range cars, making them economically viable for tasks currently performed by $50,000-$100,000/year human labor.
 
@@ -284,7 +284,7 @@ This textbook is organized into six parts, progressing from foundational skills 
 
 **Hands-On Projects**:
 - Train YOLOv8 on custom dataset of household objects with 95% mAP@0.5 (Chapter 10)
-- Estimate 6-DOF poses of tabletop objects with <5 mm translation error (Chapter 11)
+- Estimate 6-DOF poses of tabletop objects with &lt;5 mm translation error (Chapter 11)
 - Deploy perception pipeline on Jetson Orin Nano running at ≥10 Hz (Chapter 12)
 
 **Learning Outcomes**: Build real-time vision systems achieving state-of-the-art accuracy on robotic manipulation tasks, optimized for 15W power budgets.
@@ -300,7 +300,7 @@ This textbook is organized into six parts, progressing from foundational skills 
 
 **Hands-On Projects**:
 - Fine-tune OpenVLA on 500 demonstrations of custom manipulation tasks (Chapter 15)
-- Deploy VLA policy controlling humanoid arms with <300 ms latency (Chapter 16)
+- Deploy VLA policy controlling humanoid arms with &lt;300 ms latency (Chapter 16)
 
 **Learning Outcomes**: Train and deploy language-conditioned manipulation policies that generalize to novel objects and instructions.
 

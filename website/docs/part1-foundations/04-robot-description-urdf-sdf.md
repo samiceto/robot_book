@@ -188,12 +188,12 @@ A URDF file is an XML document with three core elements:
 
 URDF uses **right-handed coordinate systems** with transforms defined by:
 
-$$
+```math
 T = \begin{bmatrix}
-R_{3\times3} & t_{3\times1} \\
-0_{1\times3} & 1
+R_{3 \times 3} & t_{3 \times 1} \\
+0_{1 \times 3} & 1
 \end{bmatrix}
-$$
+```
 
 Where:
 - $R$ is the rotation matrix (computed from roll-pitch-yaw Euler angles)
@@ -231,42 +231,42 @@ Where:
 
 For rigid bodies, the inertia tensor $I$ is:
 
-$$
+```math
 I = \begin{bmatrix}
 I_{xx} & I_{xy} & I_{xz} \\
 I_{xy} & I_{yy} & I_{yz} \\
 I_{xz} & I_{yz} & I_{zz}
 \end{bmatrix}
-$$
+```
 
 **Moments of Inertia** (diagonal elements):
-- $I_{xx} = \int (y^2 + z^2) \, dm$
-- $I_{yy} = \int (x^2 + z^2) \, dm$
-- $I_{zz} = \int (x^2 + y^2) \, dm$
+- $I_\{xx\} = \int (y^2 + z^2) \, dm$
+- $I_\{yy\} = \int (x^2 + z^2) \, dm$
+- $I_\{zz\} = \int (x^2 + y^2) \, dm$
 
 **Products of Inertia** (off-diagonal):
-- $I_{xy} = -\int xy \, dm$
-- $I_{xz} = -\int xz \, dm$
-- $I_{yz} = -\int yz \, dm$
+- $I_\{xy\} = -\int xy \, dm$
+- $I_\{xz\} = -\int xz \, dm$
+- $I_\{yz\} = -\int yz \, dm$
 
 **Common Shapes** (at center of mass):
 
-| Shape | Dimensions | $I_{xx}$ | $I_{yy}$ | $I_{zz}$ |
+| Shape | Dimensions | $I_\{xx\}$ | $I_\{yy\}$ | $I_\{zz\}$ |
 |-------|-----------|---------|---------|---------|
-| **Box** | width $w$, depth $d$, height $h$ | $\frac{m}{12}(d^2 + h^2)$ | $\frac{m}{12}(w^2 + h^2)$ | $\frac{m}{12}(w^2 + d^2)$ |
-| **Cylinder** (Z-axis) | radius $r$, length $l$ | $\frac{m}{12}(3r^2 + l^2)$ | $\frac{m}{12}(3r^2 + l^2)$ | $\frac{m r^2}{2}$ |
-| **Sphere** | radius $r$ | $\frac{2mr^2}{5}$ | $\frac{2mr^2}{5}$ | $\frac{2mr^2}{5}$ |
+| **Box** | width $w$, depth $d$, height $h$ | $\frac\{m\}\{12\}(d^2 + h^2)$ | $\frac\{m\}\{12\}(w^2 + h^2)$ | $\frac\{m\}\{12\}(w^2 + d^2)$ |
+| **Cylinder** (Z-axis) | radius $r$, length $l$ | $\frac\{m\}\{12\}(3r^2 + l^2)$ | $\frac\{m\}\{12\}(3r^2 + l^2)$ | $\frac\{m r^2\}\{2\}$ |
+| **Sphere** | radius $r$ | $\frac\{2mr^2\}\{5\}$ | $\frac\{2mr^2\}\{5\}$ | $\frac\{2mr^2\}\{5\}$ |
 
 **Example**: 2kg box (0.5m × 0.1m × 0.1m):
-- $I_{xx} = \frac{2}{12}(0.1^2 + 0.1^2) = 0.00333$ kg·m²
-- $I_{yy} = \frac{2}{12}(0.5^2 + 0.1^2) = 0.0433$ kg·m²
-- $I_{zz} = \frac{2}{12}(0.5^2 + 0.1^2) = 0.0433$ kg·m²
+- $I_\{xx\} = \frac\{2\}\{12\}(0.1^2 + 0.1^2) = 0.00333$ kg·m²
+- $I_\{yy\} = \frac\{2\}\{12\}(0.5^2 + 0.1^2) = 0.0433$ kg·m²
+- $I_\{zz\} = \frac\{2\}\{12\}(0.5^2 + 0.1^2) = 0.0433$ kg·m²
 
-**Parallel Axis Theorem**: If inertia at COM is $I_{\text{COM}}$, inertia at offset $d$ is:
+**Parallel Axis Theorem**: If inertia at COM is $I_\{\text\{COM\}\}$, inertia at offset $d$ is:
 
-$$
-I = I_{\text{COM}} + m d^2
-$$
+```math
+I = I_\{\text\{COM\}\} + m d^2
+```
 
 **Tool**: Use MeshLab or Blender to compute inertia from STL meshes with assumed density.
 

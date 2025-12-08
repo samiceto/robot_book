@@ -16,7 +16,7 @@
 **Key Requirements**:
 - Risk assessment and mitigation
 - Emergency stop accessible within 1 second
-- Collision force limits (<150N for head, <50N for body)
+- Collision force limits (&lt;150N for head, &lt;50N for body)
 - Pinch point protection
 - Electrical safety (low voltage)
 

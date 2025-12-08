@@ -55,7 +55,7 @@ All chapters include hands-on code examples available at:
 
 ## Get Started
 
-Ready to build your first humanoid robot? Start with [Chapter 1: Introduction to Physical AI](part1-foundations/01-introduction-to-physical-ai.md).
+Ready to build your first humanoid robot? Start with [Chapter 1: Introduction to Physical AI](part1-foundations/introduction-to-physical-ai).
 
 ---
 
